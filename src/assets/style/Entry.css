@@ -1,10 +1,31 @@
+.Entry {
+    height: 100%;
+    width: 100%;
+}
 
+.title {
+    position: fixed;
+    top: 0;
+    background: rgba(0,0,0,0);
+    color: white;
+    font-size: 35px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.top,.bottom {
+    height: 50%;
+}
 
 .top {
-    font-size: 200px;
-    color: lightskyblue;
+    background: #FF9933;
 }
 
 .bottom {
+    background: #FF6633;
+}
 
+@media only screen and (min-width: 768px) {
+    .title {
+        font-size: 30px;
+    }
 }

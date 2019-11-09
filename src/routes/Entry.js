@@ -1,15 +1,17 @@
 import React from 'react';
-import Styles from '../assets/style/Entry.css';
+import styles from "../assets/style/Entry.css";
 
 const Entry = () => {
 
-
 	return(
-		<div>
-			<div className={Styles.top}>
-				111111
+		<div className={styles.Entry}>
+			<div className={styles.title}>
+				Zhang&nbsp;Xv
 			</div>
-			<div className={Styles.bottom}>
+			<div className={styles.top}>
+
+			</div>
+			<div className={styles.bottom}>
 
 			</div>
 		</div>
