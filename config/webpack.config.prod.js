@@ -62,6 +62,15 @@ const ExtractTextPluginCSSModules = new ExtractTextPlugin({
   ignoreOrder: true,
 })
 
+//加入viewport解决方案
+const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
+const postcssPxToViewport = require('postcss-px-to-viewport');
+const postcssWriteSvg = require('postcss-write-svg');
+const postcssCssnext = require('postcss-cssnext');
+const postcssViewportUnits = require('postcss-viewport-units');
+const cssnano = require('cssnano');
+
+
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -74,11 +83,8 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: [require.resolve('./polyfills'), paths.appIndexJs],
   output: {
-    // The build folder.
     path: paths.appBuild,
-    // Generated JS file names (with nested folders).
-    // There will be one main bundle, and one file per asynchronous chunk.
-    // We don't currently advertise code splitting but Webpack supports it.
+
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
@@ -266,6 +272,26 @@ module.exports = {
                             ],
                             flexbox: 'no-2009',
                           }),
+                          postcssAspectRatioMini({}),
+                          postcssPxToViewport({
+                            viewportWidth: 750, // (Number) The width of the viewport.
+                            viewportHeight: 1334, // (Number) The height of the viewport.
+                            unitPrecision: 3, // (Number) The decimal numbers to allow the REM units to grow to.
+                            viewportUnit: 'vw', // (String) Expected units.
+                            selectorBlackList: ['.ignore', '.hairlines'], // (Array) The selectors to ignore and leave as px.
+                            minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
+                            mediaQuery: false // (Boolean) Allow px to be converted in media queries.
+                          }),
+                          postcssWriteSvg({
+                            utf8: false
+                          }),
+                          postcssCssnext({}),
+                          postcssViewportUnits({}),
+                          cssnano({
+                            preset: "advanced",
+                            autoprefixer: false,
+                            "postcss-zindex": false
+                          })
                         ],
                       },
                     },

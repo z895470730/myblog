@@ -1,6 +1,23 @@
 .Entry {
-    height: 100%;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
     width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.Entry::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    bottom: -100%;
+    right: -100%;
+    background: radial-gradient(#00ffdd 0%,  #00aeff 60%, #1e65e9 100%);
+    background-size: 100% 100%;
+    animation: bg_position 10s infinite linear alternate;
+    z-index: -1;
 }
 
 .title {
@@ -9,8 +26,8 @@
     background: rgba(0,0,0,0);
     color: white;
     font-size: 35px;
-    padding-top: 30px;
-    padding-left: 30px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 .top,.bottom {
     height: 50%;
@@ -24,8 +41,83 @@
     background: #FF6633;
 }
 
+.plane_box {
+    position: relative;
+    width: 600px;
+    top: 30%;
+    margin: 0 auto;
+    animation: fly 8s infinite linear alternate;
+}
+
+.plane {
+    width: 100%;
+    max-width: 100%;
+}
+
+.rotate_container {
+    position: absolute;
+    top: 40%;
+    left: 13.1%;
+    display: inline-block;
+    width: 27.424%;
+    height: 14.4474%;
+    transform-origin: center center;
+
+}
+
+.propeller {
+    width: 100%;
+    transform: rotateY(-28deg);
+    animation: rotating .15s linear infinite reverse;
+}
+
 @media only screen and (min-width: 768px) {
     .title {
         font-size: 30px;
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(15px, 10px);
+    }
+    50% {
+        transform: translate(-10px, -30px);
+    }
+    75% {
+        transform: translate(20px, -15px);
+    }
+    100% {
+        transform: translate(15px, 10px);
+    }
+}
+
+@keyframes bg_position {
+    0% {
+        transform: translate(30%, 30%);
+    }
+    25% {
+        transform: translate(-30%, 30%);
+    }
+    50% {
+        transform: translate(-30%, -30%);
+    }
+    75% {
+        transform: translate(30%, -30%);
+    }
+    100% {
+        transform: translate(30%, 30%);
+    }
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0) rotateY(-20deg);
+    }
+    50% {
+        transform: rotate(180deg) rotateY(-20deg);
+    }
+    100% {
+        transform: rotate(360deg) rotateY(-20deg);
     }
 }
