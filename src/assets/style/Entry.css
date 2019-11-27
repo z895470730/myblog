@@ -23,30 +23,42 @@
     height: 50%;
 }
 
-.left {
-    background: #FA8072;
-}
-
 .right {
     background: #ff9933;
 }
 
+.left {
+    background: #FA8072;
+}
+
+.infoBox div {
+    width: 100%;
+    color: white;
+    margin-top: 10px;
+}
+
+.avatar {
+    width: 20%;
+    border-radius: 50%;
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+.blogEntry {
+    width: 8%;
+    cursor: pointer;
+}
+
 .infoBox {
-    width: 25%;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.github, .blog{
-    width: 100%;
-}
-
-.github:hover {
-    transition: transform 1s ease;
-    transform: scale(1.1);
-    cursor: pointer;
+.github {
+    width: 20%;
 }
 
 @media only screen and (min-width: 768px) {
