@@ -1,0 +1,26 @@
+.Article {
+    min-height: 60%;
+    padding-top: 8px;
+}
+
+.cardItem {
+    list-style: none;
+    margin-bottom: 5px;
+    background: #f8f8f8;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px lightgray;
+}
+
+.cardList {
+    width: 100%;
+}
+
+.articleTitle::after {
+    content: "";
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    height: 1.3px;
+    background: white;
+}

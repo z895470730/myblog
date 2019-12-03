@@ -22,23 +22,75 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: lightcoral;
-    font-size: 70px;
+    font-size: 65px;
     font-weight: 800;
+}
+
+.navBox {
+    position: relative;
+}
+
+.body {
+    min-height: 50%;
 }
 
 .footer{
     text-align: center;
-    line-height: 70px;
+    height: 10%;
+    line-height: 100%;
     background: rgba(0, 0, 0, .5);
     color: white;
 }
 
 @media only screen and (min-width: 768px) {
     .header {
-        height: 50%;
+        height: 43%;
     }
 
     .title {
-        font-weight: 600;
+        font-weight: 400;
+    }
+
+    .navMenu {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-40%);
+        right: 0;
+        width: 35%;
+        display: flex;
+    }
+
+    .navMenu li {
+        flex-grow: 1;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .navMenu li:hover {
+        transition: color .6s;
+        color: lightcoral;
+    }
+
+    .navMenu li:hover::after {
+        animation: lineChange .8s forwards;
+    }
+
+    .navMenu li::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -13px;
+        transform: translateX(-50%);
+        height: 1px;
+        background: lightcoral;
+    }
+
+    @keyframes lineChange {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 75%;
+        }
     }
 }

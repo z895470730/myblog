@@ -39,8 +39,6 @@
 
 .avatar {
     width: 20%;
-    border-radius: 50%;
-    border: 3px solid white;
     cursor: pointer;
 }
 
@@ -59,6 +57,7 @@
 
 .github {
     width: 20%;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {

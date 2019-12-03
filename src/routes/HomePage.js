@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../assets/style/HomePage.css';
+import Article from '../components/Article';
 
 const HomePage = () => {
 	return(
@@ -17,22 +18,25 @@ const HomePage = () => {
 						</button>
 						<span className={`${styles.logo} navbar-brand`}>zhang xv</span>
 					</div>
-					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul className="nav navbar-nav">
-							<li>111</li>
-							<li>111</li>
-							<li>111</li>
-							<li>111</li>
-						</ul>
-						<ul className="nav navbar-nav">
-							111
+					<div className={`${styles.navBox} collapse navbar-collapse`} id="bs-example-navbar-collapse-1">
+						<ul className={`${styles.navMenu} nav navbar-nav`}>
+							<li>首页</li>
+							<li>文章</li>
+							<li>日志</li>
+							<li>GitHub</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-			<mian className={styles.body}>
-				这里是文章列表
-			</mian>
+			<main className={styles.body}>
+				<div className={`col-xs-0 col-sm-2 col-md-2 col-lg-2`}>
+					left
+				</div>
+				<Article/>
+				<div className={`col-xs-0 col-sm-2 col-md-2 col-lg-2`}>
+					right
+				</div>
+			</main>
 			<footer className={styles.footer}>
 				©zhangxv 2019-2020
 			</footer>
