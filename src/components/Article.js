@@ -8,7 +8,7 @@ class Article extends React.Component{
 
 	render() {
 		return (
-			<div className={`${styles.Article} col-xs-12 col-sm-8 col-md-8 col-lg-8`}>
+			<div className={`${styles.Article} col-xs-10 col-sm-10 col-md-8 col-lg-6`}>
 				<ul className={styles.cardList}>
 					<li className={styles.cardItem}>
 						<h3 className={styles.articleTitle}>
@@ -20,6 +20,11 @@ class Article extends React.Component{
 							您可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。
 
 							在本教程中，您将学习如何使用 HTML 来创建站点。
+						</div>
+						<div className={styles.cardFooter}>
+
+							<div className={styles.more}>阅读全文</div>
+							<div className={styles.date}>2019年12月4日</div>
 						</div>
 					</li>
 					<li className={styles.cardItem}>demo</li>

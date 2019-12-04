@@ -14,6 +14,7 @@
     height: 40%;
     margin-bottom: 0;
     position: relative;
+
 }
 
 .title {
@@ -24,6 +25,7 @@
     color: lightcoral;
     font-size: 65px;
     font-weight: 800;
+    animation: load 1.8s ease-in;
 }
 
 .navBox {
@@ -32,14 +34,28 @@
 
 .body {
     min-height: 50%;
+    display: flex;
+}
+
+.leftMenu, .rightMenu {
+    width: 0;
+    display: none;
 }
 
 .footer{
     text-align: center;
     height: 10%;
     line-height: 100%;
-    background: rgba(0, 0, 0, .5);
     color: white;
+}
+
+@keyframes load {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -58,12 +74,17 @@
         right: 0;
         width: 35%;
         display: flex;
+        height: 100%;
+        align-items: center;
     }
 
     .navMenu li {
         flex-grow: 1;
         cursor: pointer;
-        text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .navMenu li:hover {
@@ -79,10 +100,15 @@
         content: "";
         position: absolute;
         left: 50%;
-        bottom: -13px;
+        bottom: 0;
         transform: translateX(-50%);
         height: 1px;
         background: lightcoral;
+    }
+
+    .leftMenu, .rightMenu {
+        width: 25%;
+        display: inline-block;
     }
 
     @keyframes lineChange {

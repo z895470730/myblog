@@ -29,11 +29,11 @@ const HomePage = () => {
 				</div>
 			</nav>
 			<main className={styles.body}>
-				<div className={`col-xs-0 col-sm-2 col-md-2 col-lg-2`}>
+				<div className={styles.leftMenu}>
 					left
 				</div>
 				<Article/>
-				<div className={`col-xs-0 col-sm-2 col-md-2 col-lg-2`}>
+				<div className={styles.rightMenu}>
 					right
 				</div>
 			</main>

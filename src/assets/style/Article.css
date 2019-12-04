@@ -1,26 +1,97 @@
 .Article {
     min-height: 60%;
     padding-top: 8px;
+    width: 50%;
+    animation: load 2s;
 }
 
 .cardItem {
     list-style: none;
-    margin-bottom: 5px;
-    background: #f8f8f8;
-    padding: 8px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px lightgray;
+    margin-bottom: 15px;
+    animation: move 2s ease-in;
 }
 
 .cardList {
     width: 100%;
+    padding: 0;
 }
 
 .articleTitle::after {
     content: "";
     display: block;
-    width: 100%;
-    margin-top: 5px;
-    height: 1.3px;
-    background: white;
+    margin-top: 15px;
+    height: 1px;
+    background: lightgrey;
+    animation: lineChange 1.8s;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.more {
+    color: lightcoral;
+    display: inline-block;
+    line-height: 2;
+    width: 40px;
+    text-align: center;
+    border: 1px solid lightcoral;
+    cursor: pointer;
+}
+
+.date {
+    color: grey;
+}
+
+@keyframes lineChange {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    0% {
+        margin-top: 50px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Article {
+        width: 90%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .articleTitle::after {
+        margin-top: 25px;
+    }
+
+    .cardFooter {
+        margin-top: 15px;
+    }
+
+    .more {
+        width: 80px;
+    }
 }
