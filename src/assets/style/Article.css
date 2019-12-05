@@ -1,14 +1,15 @@
 .Article {
     min-height: 60%;
     padding-top: 8px;
-    width: 50%;
+    max-width: 500em;
+    margin: 0 auto;
     animation: load 2s;
 }
 
 .cardItem {
     list-style: none;
-    margin-bottom: 15px;
-    animation: move 2s ease-in;
+    margin-bottom: 5em;
+    animation: move 1.3s ease-in;
 }
 
 .cardList {
@@ -16,10 +17,18 @@
     padding: 0;
 }
 
+.content {
+    color: grey;
+}
+
+.articleTitle {
+    cursor: pointer;
+}
+
 .articleTitle::after {
     content: "";
     display: block;
-    margin-top: 15px;
+    margin-top: .8em;
     height: 1px;
     background: lightgrey;
     animation: lineChange 1.8s;
@@ -29,17 +38,43 @@
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .more {
     color: lightcoral;
     display: inline-block;
-    line-height: 2;
-    width: 40px;
+    line-height: 2em;
+    width: 6.5em;
     text-align: center;
-    border: 1px solid lightcoral;
+    outline: 1px solid lightcoral;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.more::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 45px;
+    width: 45px;
+    background: lightcoral;
+    transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+}
+
+.more:hover {
+    color: white;
+    transition: color .4s;
+}
+
+.more:hover::before{
+    transform: translate3d(-50%,-50%,0) scale3d(2,2,2);
+    border-radius: 50%;
+    transform-origin: center;
+    transition: transform .4s ease-in-out;
+    z-index: -1;
 }
 
 .date {
@@ -79,8 +114,6 @@
     .Article {
         width: 90%;
         position: relative;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     .articleTitle::after {

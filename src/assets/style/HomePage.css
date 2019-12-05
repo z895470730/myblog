@@ -32,21 +32,16 @@
     position: relative;
 }
 
+.category {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .body {
     min-height: 50%;
     display: flex;
-}
-
-.leftMenu, .rightMenu {
-    width: 0;
-    display: none;
-}
-
-.footer{
-    text-align: center;
-    height: 10%;
-    line-height: 100%;
-    color: white;
 }
 
 @keyframes load {
@@ -104,11 +99,6 @@
         transform: translateX(-50%);
         height: 1px;
         background: lightcoral;
-    }
-
-    .leftMenu, .rightMenu {
-        width: 25%;
-        display: inline-block;
     }
 
     @keyframes lineChange {

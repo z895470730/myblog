@@ -27,15 +27,12 @@ const HomePage = () => {
 						</ul>
 					</div>
 				</div>
+				<div className={styles.category}>
+					html
+				</div>
 			</nav>
 			<main className={styles.body}>
-				<div className={styles.leftMenu}>
-					left
-				</div>
 				<Article/>
-				<div className={styles.rightMenu}>
-					right
-				</div>
 			</main>
 			<footer className={styles.footer}>
 				©zhangxv 2019-2020
