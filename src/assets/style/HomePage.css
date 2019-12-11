@@ -80,15 +80,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: color .6s;
     }
 
     .navMenu li:hover {
-        transition: color .6s;
         color: lightcoral;
     }
 
     .navMenu li:hover::after {
-        animation: lineChange .8s forwards;
+        width: 75%;
     }
 
     .navMenu li::after {
@@ -99,14 +99,7 @@
         transform: translateX(-50%);
         height: 1px;
         background: lightcoral;
-    }
-
-    @keyframes lineChange {
-        0% {
-            width: 0;
-        }
-        100% {
-            width: 75%;
-        }
+        transition: width .8s;
+        width: 0;
     }
 }

@@ -51,6 +51,7 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: color .4s ease-in;
 }
 
 .more::before {
@@ -62,19 +63,19 @@
     width: 45px;
     background: lightcoral;
     transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+    transform-origin: center;
+    transition: transform .4s ease-in-out;
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .more:hover {
     color: white;
-    transition: color .4s;
 }
+
 
 .more:hover::before{
     transform: translate3d(-50%,-50%,0) scale3d(2,2,2);
-    border-radius: 50%;
-    transform-origin: center;
-    transition: transform .4s ease-in-out;
-    z-index: -1;
 }
 
 .date {
